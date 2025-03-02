@@ -3,9 +3,10 @@ import { router } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 import axios from 'axios';
 import { Platform } from 'react-native';
+import Config from 'react-native-config';
 
 // Define the base URL for API calls
-const API_URL = 'http://localhost:3000/api';
+const API_URL = Config.API_URL;
 
 // Define the shape of the user object
 interface User {
@@ -29,7 +30,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Storage key for the auth token
-const TOKEN_KEY = 'dogcafe6ix_auth_token';
+const TOKEN_KEY = Config.TOKEN_KEY;
 
 // Custom hook to use the auth context
 export const useAuth = () => {
